@@ -50,3 +50,38 @@ laravel.test-1  | PHP Fatal error:  Composer detected issues in your platform: Y
 
 ## refs
 https://qiita.com/mitashun/items/decbc4346e99edaec907
+
+# laravel-langが導入できない
+
+```
+warning:  cannot set modif./access times for /var/www/html/vendor/composer/7a2ee95b/Laravel-Lang-lang-0937695/source/fortify/1.x/fortify.json Operation not permitted
+```
+
+等々の権限がなくて、ファイルアクセスができないWargning頻発後、Failedで導入が終わる。
+
+## solve
+
+1. wslで起動しているLinuxディストリビューション上で、`/etc/wsl.conf` を作成。以下をコピペする。
+
+```
+[automount]
+enabled = true
+options = "metadata"
+mountFsTab = false
+```
+
+2. WSLを使っているWindowsアプリケーション、Dockerも終了する
+3. PowerShellを起動
+
+```powershell
+> wsl --list
+# 入れているwslサブシステム一覧が表示される。
+# 1.で起動したサブシステムの名前を見つける
+> wsl --terminate Debian    # Debianの部分は、上コマンドで見つけたサブシステムの名前をいれる
+```
+
+4. 1.のディストリビューションをWindowsのアプリケーション一覧から起動
+
+## refs
+- https://qiita.com/haruto_dev/items/9342d81cb9d965e10dc8
+- https://github.com/Microsoft/WSL/issues/81#issuecomment-796798258
