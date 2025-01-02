@@ -85,3 +85,20 @@ mountFsTab = false
 ## refs
 - https://qiita.com/haruto_dev/items/9342d81cb9d965e10dc8
 - https://github.com/Microsoft/WSL/issues/81#issuecomment-796798258
+
+# laravel-langで日本語化
+
+```bash
+# langディレクトリは初期状態ではないため、以下で作成する
+sail artisan lang:publish
+
+# composerでlaravel-langを導入
+sail composer require laravel-lang/lang
+#vendorにlaravel-langのファイルが入るが、実態はjsonで、laravelが参照するのはphpなので、書籍『プロフェッショナルWebプログラミング』の通りだと、多分バージョン指定で解決するかも？
+
+# laravel-lang/langの日本語化ファイルを元に、lang/ja/validation.phpなどの言語ファイルを更新
+sail artisan lang:update
+```
+
+## refs
+- https://saiko1988.hatenablog.com/entry/2023/08/20/011654
