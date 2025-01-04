@@ -112,3 +112,46 @@ php artisan db:seed --class=UserSeeder
 ## refs
 - https://readouble.com/laravel/11.x/ja/seeding.html
     - シーダの実行
+
+# Laravel Breezeを入れるときに、権限でfatalとなった
+
+```
+The repository at "/var/www/html" does not have the correct ownership and git refuses to use it:
+                                                                                                                                                                                        
+fatal: detected dubious ownership in repository at '/var/www/html'                                                                                                                      
+To add an exception for this directory, call:                                                                                                                                           
+                                                                                                                                                                                        
+        git config --global --add safe.directory /var/www/html 
+```
+
+# RouteserviceProvider::HOMEがない
+
+app\Http\Controllers\Auth\AuthenticatedSessionController.php#storeで、 `/dashbord` にリダイレクトしているので、ここを書き換える？
+
+## refs
+- `bootstrap/app.php` で対応する
+    - https://blog.regrex.jp/2024/07/22/laravel11-guest%E3%83%9F%E3%83%89%E3%83%AB%E3%82%A6%E3%82%A7%E3%82%A2%E3%81%AE%E3%83%AA%E3%83%80%E3%82%A4%E3%83%AC%E3%82%AF%E3%83%88%E5%85%88%E3%81%AE%E5%A4%89%E6%9B%B4%E6%96%B9%E6%B3%95%E3%81%8C/
+    - https://tech.arms-soft.co.jp/entry/2024/07/10/090000
+    - ここを書き換えるだけではできなかった
+- 個別にリダイレクトさせる
+    - https://qiita.com/wonky39325441/items/0e6818911896b0c85479
+- 『Laravelの教科書』
+    - routes/web.phpで `/dashbord` のパスに指定するControllerを変えたい処理のControllerに書き換える
+
+# Unable to locate file in Vite manifest
+
+```bash
+# viteが依存しているプラグインの解決
+sail npm install --save-dev vite laravel-vite-plugin
+sail npm install --save-dev @vitejs/plugin-vue
+
+# ビルドしなおし
+sail npm run build
+
+# vite起動
+sail npm run dev
+# 起動しっぱなしにしないと解決できない
+```
+
+## refs
+https://qiita.com/zakki_engineer/items/170ac2386c23b9d78c4b
