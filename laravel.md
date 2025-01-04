@@ -102,3 +102,13 @@ sail artisan lang:update
 
 ## refs
 - https://saiko1988.hatenablog.com/entry/2023/08/20/011654
+
+# 個別のシーダの実行
+
+```bash
+php artisan db:seed --class=UserSeeder
+```
+
+## refs
+- https://readouble.com/laravel/11.x/ja/seeding.html
+    - シーダの実行
