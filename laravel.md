@@ -155,3 +155,7 @@ sail npm run dev
 
 ## refs
 https://qiita.com/zakki_engineer/items/170ac2386c23b9d78c4b
+
+# tailwingcssが反映されない
+
+viteを再起動する
