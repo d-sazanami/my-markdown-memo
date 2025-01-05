@@ -16,3 +16,6 @@ emmet.triggerExpansionOnTab : true
 ```
 
 タグ名を入力し、tabを入力すると、保管できるようになる
+
+### refs
+https://qiita.com/mikd/items/183023f99db8954a0443
