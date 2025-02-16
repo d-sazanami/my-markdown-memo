@@ -159,3 +159,47 @@ https://qiita.com/zakki_engineer/items/170ac2386c23b9d78c4b
 # tailwingcssが反映されない
 
 viteを再起動する
+
+# Mailableメールのview
+- 8.x系：build関数
+- 11.x系：content関数
+-- https://laravel.com/docs/11.x/mail#configuring-the-view
+
+# 何か起動できない
+```
+Error response from daemon: failed to create task for container: failed to create shim task:
+OCI runtime create failed: runc create failed: unable to start container process:
+error during container init: error mounting "/run/desktop/mnt/host/wsl/docker-desktop-bind-mounts/Ubuntu-20.04/5515c1fb780fbd1bfe96dbd1a9c11eac91ce72ddea299d885674a6ed2009a50b" to rootfs at "/etc/my.cnf":
+mount /run/desktop/mnt/host/wsl/docker-desktop-bind-mounts/Ubuntu-20.04/5515c1fb780fbd1bfe96dbd1a9c11eac91ce72ddea299d885674a6ed2009a50b:/etc/my.cnf (via /proc/self/fd/6),
+flags: 0x5000: not a directory: unknown: Are you trying to mount a directory onto a file (or vice-versa)? Check if the specified host path exists and is the expected type
+```
+my.cnfをWindowsのファイルプロパティを読み取り専用に設定し直し＆確認
+sail downで削除してから、再度sail up -d
+
+```
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+chdir: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+cd: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+chdir: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+getwd: no such file or directory
+getwd: no such file or directory
+```
+-refs: https://stackoverflow.com/questions/60826507/error-retrieving-current-directory-getcwd-in-docker-container
+コンテナが停止しきってないのようなことを言っている。Docker DesktopのGUIでコンテナ状況を見たら、一部のコンテナが起動している状態だったので、GUIから停止
+コンテナ削除しても変わらないので、Docker再起動
+
+https://arika.org/2011/06/23/shell-init-error-retrieving-current-directory/
+この記事を参照している記事をいくつか見たところ、カレントディレクトリがない、という状況の模様。再構築からやってみると良いかも。
+
+/mnt/c/Users/lukif/example-appでVSCodeのUbuntuターミナルで起動するようになった状態で、sail upしたら、動いた
+
+# MailHog
+
+http://localhost:8025/
+
+# mysql
+
+```bash
+sail mysql
+```
