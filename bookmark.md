@@ -1,16 +1,3 @@
-# Vim・「行末」に文字を挿入する手順
-https://japanrock-pg.hatenablog.com/entry/20100628/1277739776
-
-# Posershellで再帰grep
-https://learn.microsoft.com/ja-jp/powershell/module/microsoft.powershell.utility/select-string?view=powershell-7.4#6
-
-# PowerShell・more考察記事
-https://coffeekemuri.blogspot.com/2018/08/powershell-powershellmoreunixmore.html
-
-```powershell
-Get-Content target.txt | Out-Host -Paging
-```
-
 # Wappalyzer - Technology profiler
 
 https://chromewebstore.google.com/detail/wappalyzer-technology-pro/gppongmhjkpfnbhagpmjfkannfbllamg?hl=ja
@@ -22,3 +9,13 @@ Azureを使っているとか、AWSを使っているとか、どういう技術
 ```bash
 git remote set-url origin git@github-sazanami:d-sazanami/professional-laravel9.git
 ```
+
+# bash・ファイル内検索一致箇所コマンド
+
+```bash
+find path -type f -name *.php -print | xargs grep -n SearchWord
+```
+
+# Mermaid・図に中期を追加する
+subgraphを使用して作る
+フローチャートはPlantUMLより、Mermaidの方が図形がよりそれっぽい。最近はAIにプログラムコードからMermaidやPlantUMLの記述を出力できる。
