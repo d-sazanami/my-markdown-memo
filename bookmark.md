@@ -4,12 +4,6 @@ https://chromewebstore.google.com/detail/wappalyzer-technology-pro/gppongmhjkpfn
 Azureを使っているとか、AWSを使っているとか、どういう技術でサーバーができているか、教えてくれるChrome拡張機能
 こういうのでわからないようする技術もあるらしい
 
-# Git
-
-```bash
-git remote set-url origin git@github-sazanami:d-sazanami/professional-laravel9.git
-```
-
 # bash・ファイル内検索一致箇所コマンド
 
 ```bash
