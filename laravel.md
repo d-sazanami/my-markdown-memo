@@ -203,3 +203,5 @@ http://localhost:8025/
 ```bash
 sail mysql
 ```
+# Rails console的なことする
+tinkerを使う

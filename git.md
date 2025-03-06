@@ -25,3 +25,9 @@ git diff --name-only --diff-filter=ACRM HEAD...[comitt-hash]
 `git archive` で削除されたファイルを除外する時に便利
 
 -refs: https://tracpath.com/docs/git-diff/
+
+# リモートブランチからローカルブランチを作ってチェックアウトする
+
+```bash
+git checkout -b new_branch_name origin/main
+```

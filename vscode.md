@@ -19,3 +19,6 @@ emmet.triggerExpansionOnTab : true
 
 ### refs
 https://qiita.com/mikd/items/183023f99db8954a0443
+
+# Markdownプレビュー
+`Ctrl` + `Shift` + `V` でプレビュータブを表示。タブなので、編集時は編集しているエディタタブに移動したり、タブを閉じれば、編集を最大サイズで再開できる。
